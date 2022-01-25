@@ -14,23 +14,19 @@ export const initialState: MatchState = {
 const matchReducer = createReducer(initialState,
     on(MatchAction.incrementForHome, state => ({
         ...state,
-        awayScore: state.awayScore,
         homeScore: state.homeScore + 1
     })),
     on(MatchAction.decrementForHome, state => ({
         ...state,
-        awayScore: state.awayScore,
         homeScore: state.homeScore - 1
     })),
     on(MatchAction.incrementForAway, state => ({
         ...state,
         awayScore: state.awayScore + 1,
-        homeScore: state.homeScore
     })),
     on(MatchAction.decrementForAway, state => ({
         ...state,
         awayScore: state.awayScore - 1,
-        homeScore: state.homeScore
     })),
     on(MatchAction.resetScoreboard, state => ({
         ...state,
